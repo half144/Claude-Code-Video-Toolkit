@@ -107,6 +107,16 @@ claude mcp add playwright -s user -- npx @playwright/mcp@latest --save-video=192
 
 Claude navigates your app, clicks through flows, fills forms — and it's all recorded. Good for product demos, bug reproductions, onboarding walkthroughs. The digitalsamba video toolkit also has a `/record-demo` command that feeds Playwright recordings into Remotion for post-processing (branded intros, transitions, captions).
 
+### Cutaway (half144)
+
+Records a web flow as a finished, Screen Studio-style video instead of a raw capture. Claude writes a short JSON script (click, type, upload a file, wait for a result), Playwright runs it in Chromium, and the capture is composed into an MP4 with a camera that zooms on the action, a human-paced cursor, motion blur and a macOS-style window. Also records at phone size, with touch indicators and an on-screen keyboard. Runs locally; FFmpeg comes with the install.
+
+| | |
+|---|---|
+| **Author** | half144 |
+| **Install** | `curl -fsSL https://raw.githubusercontent.com/half144/cutaway/master/install.sh \| bash` |
+| **Source** | [half144/cutaway](https://github.com/half144/cutaway) |
+
 ---
 
 ## YouTube Clipping & Subtitles
@@ -216,6 +226,7 @@ brew install ffmpeg  # needs libass support
 | Manim MCP Server | MCP | Renders Manim scenes server-side | Config needed |
 | Youtube Clipper | Skill | Download, chapter, clip, subtitle | One command |
 | Playwright `--save-video` | MCP flag | Screen recording | One command |
+| Cutaway | Skill | Polished demo videos with zoom, cursor and motion blur | One command |
 | FFmpeg Skill | Skill | Video encoding and processing | Part of Video Toolkit |
 
 ---
